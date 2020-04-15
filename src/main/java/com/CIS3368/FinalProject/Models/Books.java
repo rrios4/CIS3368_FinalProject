@@ -1,15 +1,33 @@
 package com.CIS3368.FinalProject.Models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.UUID;
 
+@Entity
+@Table(name="book")
 public class Books {
 
+    @Id
+    @Column(name="bookid")
     private UUID bookId;
+    @Column(name="bookname")
     private String bookName;
+    @Column(name="authorname")
     private String authorName;
+    @Column(name="booktype")
     private String bookType;
+    @Column(name="bookprice")
     private double bookPrice;
+    @Column(name="qty")
     private String qty;
+
+    public Books()
+    {
+
+    }
 
 
     public UUID getId() {

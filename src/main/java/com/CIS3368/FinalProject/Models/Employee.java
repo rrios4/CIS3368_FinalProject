@@ -1,14 +1,26 @@
 package com.CIS3368.FinalProject.Models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.UUID;
 
+@Entity
+@Table(name="employee")
 public class Employee {
 
+    @Id
+    @Column(name="employeeid")
     private UUID id;
+    @Column(name="employeefirstname")
     private String firstName;
+    @Column(name="employeelastname")
     private String lastName;
-    private String position;
+    @Column(name="datehired")
     private String dateHired;
+    @Column(name="position")
+    private String position;
 
     public UUID getId() {
         return id;
