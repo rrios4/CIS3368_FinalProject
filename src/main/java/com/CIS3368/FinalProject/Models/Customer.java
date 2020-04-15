@@ -12,7 +12,7 @@ public class Customer {
 
     @Id
     @Column(name="id")
-    private UUID id;
+    private String id;
     @Column(name="firstname")
     private String firstName;
     @Column(name="lastname")
@@ -22,15 +22,27 @@ public class Customer {
     @Column(name="email")
     private String email;
 
-    private String dob;
+    //private String dob;
 
+    public Customer()
+    {
 
+    }
 
-    public UUID getId() {
+    public Customer(String id, String firstName, String lastName, String address, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.email = email;
+
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 

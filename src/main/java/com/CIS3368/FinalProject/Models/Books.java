@@ -12,7 +12,7 @@ public class Books {
 
     @Id
     @Column(name="bookid")
-    private UUID bookId;
+    private String bookId;
     @Column(name="bookname")
     private String bookName;
     @Column(name="authorname")
@@ -20,7 +20,7 @@ public class Books {
     @Column(name="booktype")
     private String bookType;
     @Column(name="bookprice")
-    private double bookPrice;
+    private String bookPrice;
     @Column(name="qty")
     private String qty;
 
@@ -29,12 +29,23 @@ public class Books {
 
     }
 
+    public Books(String bookId, String bookName, String authorName, String bookType, String bookPrice, String qty)
+    {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.bookType = bookType;
+        this.bookPrice = bookPrice;
+        this.qty = qty;
 
-    public UUID getId() {
+    }
+
+
+    public String getId() {
         return bookId;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.bookId = id;
     }
 
@@ -62,11 +73,11 @@ public class Books {
         this.bookType = bookType;
     }
 
-    public double getBookPrice() {
+    public String getBookPrice() {
         return bookPrice;
     }
 
-    public void setBookPrice(double bookPrice) {
+    public void setBookPrice(String bookPrice) {
         this.bookPrice = bookPrice;
     }
 

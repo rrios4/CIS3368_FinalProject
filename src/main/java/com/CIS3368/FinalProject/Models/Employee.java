@@ -12,38 +12,49 @@ public class Employee {
 
     @Id
     @Column(name="employeeid")
-    private UUID id;
+    private String employeeId;
     @Column(name="employeefirstname")
-    private String firstName;
+    private String employeeFirstName;
     @Column(name="employeelastname")
-    private String lastName;
-    @Column(name="datehired")
-    private String dateHired;
+    private String employeeLastName;
     @Column(name="position")
     private String position;
 
-    public UUID getId() {
-        return id;
+    public Employee()
+    {
+
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public Employee(String employeeId, String employeeFirstName, String employeeLastName, String position)
+    {
+        this.employeeId = employeeId;
+        this.employeeFirstName = employeeFirstName;
+        this.employeeLastName = employeeLastName;
+        this.position = position;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getEmployeeId() {
+        return employeeId;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmployeeFirstName() {
+        return employeeFirstName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmployeeFirstName(String employeeFirstName) {
+        this.employeeFirstName = employeeFirstName;
+    }
+
+    public String getEmployeeLastName() {
+        return employeeLastName;
+    }
+
+    public void setEmployeeLastName(String employeeLastName) {
+        this.employeeLastName = employeeLastName;
     }
 
     public String getPosition() {
@@ -54,11 +65,5 @@ public class Employee {
         this.position = position;
     }
 
-    public String getDateHired() {
-        return dateHired;
-    }
 
-    public void setDateHired(String dateHired) {
-        this.dateHired = dateHired;
-    }
 }
