@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>BookStore</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -127,9 +127,12 @@ body {
     margin-right: 0;
   }
 }
+
 </style>
+
 <body>
- <nav class="navbar navbar-expand navbar-dark bg-dark"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
               <div class="collapse navbar-collapse" id="navbarsExample02">
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item active"> <a class="navbar-brand" href="/">Book Store</a> </li>
@@ -168,48 +171,22 @@ body {
                    </ul>
                </div> <!-- /#sidebar-wrapper -->
 
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h1 class="mt-5">Welcome!</h1>
+          <p class="lead">Where stories can be learned!</p>
+          <ul class="list-unstyled">
+              <li><a href="/orderView"><button type="button" class="btn btn-dark">Orders</button></a><br><br></li>
+              <li><a href="/BookView"><button type="button" class="btn btn-dark">Books</button></a><br><br></li>
+              <li><a href="/EmployeeView"><button type="button" class="btn btn-dark">Employees</button></a><br><br></li>
+              <li><a href="/CustomerView"><button type="button" class="btn btn-dark">Customers</button></a><br><br></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<div class="container">
-<div class="row">
-<div class="col-lg-12 text-center">
-        <h1 class="mt-5" align="center">Customer Information</h1><br>
-  <table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th>Order#</th>
-        <th>Employee</th>
-        <th>Customer</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>29.99</td>
-      </tr>
-      <tr>
-      <td>2</td>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>56.54</td>
-      </tr>
-      <tr>
-      <td>3</td>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>45.25</td>
-      </tr>
-    </tbody>
-  </table>
-  <p align="right">Powered By: AWS</p><br>
-            <ul class="list-unstyled">
-                <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>
-            </ul>
-  </div>
-  </div>
-</div>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.CIS3368.FinalProject.controllers;
+package com.CIS3368.FinalProject.Controllers;
 import com.CIS3368.FinalProject.Models.Books;
 import com.CIS3368.FinalProject.Models.BooksRepo;
 import com.CIS3368.FinalProject.Models.Customer;
@@ -34,7 +34,7 @@ public class MainController {
     @RequestMapping("/")
     public ModelAndView homePage()
     {
-        ModelAndView home = new ModelAndView("index");
+        ModelAndView home = new ModelAndView("mainMenu");
         home.addObject("list",booksRepo.findAll());
 
         return home;
