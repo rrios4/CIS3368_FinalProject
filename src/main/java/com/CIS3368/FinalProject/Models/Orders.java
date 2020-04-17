@@ -20,7 +20,8 @@ public class Orders {
     private String employeeId;
     @Column(name="bookid")
     private String bookId;
-
+    @Column(name = "orderdate")
+    private String orderDate;
     @Column(name = "ordertotal")
     private String orderTotal;
 
@@ -76,5 +77,13 @@ public class Orders {
 
     public void setOrderTotal(String orderTotal) {
         this.orderTotal = orderTotal;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 }

@@ -176,13 +176,42 @@ body {
       <div class="row">
         <div class="col-lg-12 text-center">
           <h1 class="mt-5">Welcome!</h1>
-          <p class="lead">Where stories can be learned!</p>
+          <p class="lead">Where stories can be learned!</p><br>
           <ul class="list-unstyled">
-              <li><a href="/orderView"><button type="button" class="btn btn-dark">Orders</button></a><br><br></li>
-              <li><a href="/BookView"><button type="button" class="btn btn-dark">Books</button></a><br><br></li>
-              <li><a href="/EmployeeView"><button type="button" class="btn btn-dark">Employees</button></a><br><br></li>
-              <li><a href="/CustomerView"><button type="button" class="btn btn-dark">Customers</button></a><br><br></li>
           </ul>
+
+
+                                          <div class="row">
+                                              <div class="col-md-3">
+                                                  <a href="/orderView">
+                                                      <img src="https://www.advantage-marketing.com/content/uploads/2016/07/checklists-2-300x300.jpg" alt="Image" style="max-width:100%;">
+                                                  </a>
+                                                  <h2 class="mt-4">Orders</h2>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <a href="/BookView">
+                                                      <img src="https://uofh-my.sharepoint.com/personal/ecalvar3_cougarnet_uh_edu/Documents/Microsoft%20Teams%20Chat%20Files/kisspng-vector-graphics-book-computer-icons-royalty-free-s-borrow-library-books-ross-elementary-washington-d-5cdfb305e042f0.0302187615581642299186.png" alt="Image" style="max-width:100%;">
+                                                  </a>
+                                                  <h2 class="mt-4">Books</h2>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <a href="/EmployeeView">
+                                                      <img src="https://www.mentalhealthcommission.ca/sites/default/files/2016-07/Employees_Icon-CMYK.png" alt="Image" style="max-width:100%;">
+                                                  </a>
+                                                  <h2 class="mt-4">Employees</h2>
+                                              </div>
+                                              <div class="col-md-3">
+                                                  <a href="/CustomerView">
+                                                      <img src="https://chiropractorspaisley.co.uk/wp-content/uploads/2019/08/icon-3.png" alt="Image" style="max-width:100%;">
+                                                  </a>
+                                                  <h2 class="mt-4">Customers</h2>
+                                              </div>
+                                          </div>
+                                          <!--.row-->
+
+                                      <!--.item-->
+
+
         </div>
       </div>
     </div>

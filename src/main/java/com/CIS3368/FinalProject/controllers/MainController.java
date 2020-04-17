@@ -44,7 +44,7 @@ public class MainController {
     public ModelAndView save(@RequestParam("bookid") String bookId, @RequestParam("bookname") String bookName, @RequestParam("authorname") String authorName,
                              @RequestParam("publisher") String publisher, @RequestParam("bookprice") String bookPrice, @RequestParam("qty") String qty )
     {
-        ModelAndView bookEdit = new ModelAndView("redirect:/");
+        ModelAndView bookEdit = new ModelAndView("redirect:/BookView");
         Books bookToSave ;
         if(!bookId.isEmpty())
         {
