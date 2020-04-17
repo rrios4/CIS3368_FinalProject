@@ -174,6 +174,21 @@ body {
            <div class="row">
                <div class="col-lg-12 text-center">
                    <h1 class="mt-5" align="center">Book Information</h1><br>
+                                  <form method="post" action="/saveBook">
+                                      <input type="hidden" name="bookid" value="">
+
+                                      <input type="text" placeholder="Book Name" name="bookname" value="${selectedItem.getBookName()}">
+
+                                      <input type="text" placeholder="Author Name" name="authorname" value="${selectedItem.getAuthorName()}">
+
+                                      <input type="text" placeholder="Publisher" name="publisher" value="${selectedItem.getPublisher()}">
+
+                                      <input type="text" placeholder="Price" name="bookprice" value="${selectedItem.getBookPrice()}">
+
+                                      <input type="text" placeholder="Quantity" name="qty" value="${selectedItem.getQTY()}">
+                                      <input type="submit" value="Submit">
+                                      <br><br>
+                                  </form>
                    <table class="table table-dark table-striped">
                        <thead>
                        <tr>
@@ -187,8 +202,11 @@ body {
                        <tbody>
                        <c:forEach var = "listitem" items = "${booklist}">
                            <tr>
-                               <td>${listitem.getFirstName()}</td>
-                               <td>${listitem.getLastName()}</td>
+                               <td>${listitem.getBookName()}</td>
+                               <td>${listitem.getAuthorName()}</td>
+                               <td>${listitem.getPublisher()}</td>
+                               <td>${listitem.getBookPrice()}</td>
+                               <td>${listitem.getQty()}</td>
                            </tr>
                        </c:forEach>
 
@@ -196,22 +214,6 @@ body {
                    </table>
                    <p align="right">Powered By: AWS</p><br>
                </div>
-               <form method="post" action="/saveBook">
-                   <input type="hidden" name="bookid" value="">
-                   <br>Book Name: <br>
-                   <input type="text" name="bookname" value="${selectedItem.getBookName()}">
-                   <br>Author Name: <br>
-                   <input type="text" name="authorname" value="${selectedItem.getAuthorName()}">
-                   <br>Publisher: <br>
-                   <input type="text" name="publisher" value="${selectedItem.getPublisher()}">
-                   <br>Book Price: <br>
-                   <input type="text" name="bookprice" value="${selectedItem.getBookPrice()}">
-                   <br>Quantity: <br>
-                   <input type="text" name="qty" value="${selectedItem.getQTY()}">
-                   <br><br>
-                   <input type="submit" value="Submit">
-                   <br><br>
-               </form>
            </div>
        </div>
         <ul class="list-unstyled">

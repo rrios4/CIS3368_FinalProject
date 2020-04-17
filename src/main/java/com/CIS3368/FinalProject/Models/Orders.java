@@ -20,6 +20,7 @@ public class Orders {
     private String employeeId;
     @Column(name="bookid")
     private String bookId;
+
     @Column(name = "ordertotal")
     private String orderTotal;
 
