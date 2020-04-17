@@ -174,6 +174,17 @@ body {
             <div class="row">
                 <div class="col-lg-12 text-center">
                      <h1 class="mt-5" align="center">Employee Table</h1><br>
+                    <form method="post" action="saveEmployee">
+                        <input type="hidden" name="employeeid" value="">
+
+                        <input type="text" placeholder="First Name" name="employeefirstname" value="${selectedItem.getEmployeeFirstName()}">
+
+                        <input type="text" placeholder="Last Name" name="employeelastname" value="${selectedItem.getEmployeeLastName()}">
+
+                        <input type="text" placeholder="Position" name="position" value="${selectedItem.getPosition()}">
+                        <input type="submit" value="Submit">
+                        <br><br>
+                    </form>
                      <table class="table table-dark table-striped">
                          <thead>
                           <tr>
@@ -190,17 +201,7 @@ body {
                         </table>
                         <p align="right">Powered By: AWS</p><br>
                      </div>
-                <form method="post" action="saveEmployee">
-                    <input type="hidden" name="employeeid" value="">
-                    <br>First Name: <br>
-                    <input type="text" name="employeefirstname" value="${selectedItem.getEmployeeFirstName()}">
-                    <br>Last Name: <br>
-                    <input type="text" name="employeelastname" value="${selectedItem.getEmployeeLastName()}">
-                    <br>Postion: <br>
-                    <input type="text" name="position" value="${selectedItem.getPosition()}">
-                    <br><br>
-                    <input type="submit" value="Submit">
-                </form>
+
                 </div>
         </div>
             <ul class="list-unstyled">

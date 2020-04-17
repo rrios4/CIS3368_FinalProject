@@ -173,6 +173,19 @@ body {
 <div class="row">
 <div class="col-lg-12 text-center">
         <h1 class="mt-5" align="center">Customer Information</h1><br>
+    <form method="post" action="/saveCustomer">
+        <input type="hidden" name="id" value="">
+
+        <input type="text"  placeholder="First Name" name="firstname" value="${selectedItem.getFirstName()}">
+
+        <input type="text"  placeholder="Last Name" name="lastname" value="${selectedItem.getLastName()}">
+
+        <input type="text"  placeholder="Address" name="address" value="${selectedItem.getAddress()}">
+
+        <input type="text"  placeholder="Email" name="email" value="${selectedItem.getEmail()}">
+        <input type="submit" value="Submit">
+        <br><br>
+    </form>
   <table class="table table-dark table-striped">
     <thead>
       <tr>

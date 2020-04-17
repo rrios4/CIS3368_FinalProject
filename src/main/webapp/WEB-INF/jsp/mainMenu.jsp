@@ -190,7 +190,7 @@ body {
                                               </div>
                                               <div class="col-md-3">
                                                   <a href="/BookView">
-                                                      <img src="https://uofh-my.sharepoint.com/personal/ecalvar3_cougarnet_uh_edu/Documents/Microsoft%20Teams%20Chat%20Files/kisspng-vector-graphics-book-computer-icons-royalty-free-s-borrow-library-books-ross-elementary-washington-d-5cdfb305e042f0.0302187615581642299186.png" alt="Image" style="max-width:100%;">
+                                                      <img src="https://w7.pngwing.com/pngs/727/528/png-transparent-computer-icons-book-books-angle-logo-desktop-wallpaper.png" alt="Image" style="max-width:100%;">
                                                   </a>
                                                   <h2 class="mt-4">Books</h2>
                                               </div>

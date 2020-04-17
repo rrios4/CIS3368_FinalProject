@@ -12,22 +12,8 @@
 
 
 
-<br><br>
-<a href="customerEdit.jsp"> <button>Customers</button> </a>
 
-<form method="post" action="/saveCustomer">
-    <input type="hidden" name="id" value="">
-    <br>First Name: <br>
-    <input type="text" name="firstname" value="${selectedItem.getFirstName()}">
-    <br>Last Name: <br>
-    <input type="text" name="lastname" value="${selectedItem.getLastName()}">
-    <br>Address: <br>
-    <input type="text" name="address" value="${selectedItem.getAddress()}">
-    <br>Email: <br>
-    <input type="text" name="email" value="${selectedItem.getEmail()}">
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
+
 
 
 
