@@ -24,12 +24,6 @@ public class MainController {
 
     @Autowired
     BooksRepo booksRepo;
-    @Autowired
-    CustomerRepo customerRepo;
-    @Autowired
-    EmployeeRepo employeeRepo;
-    @Autowired
-    OrdersRepo ordersRepo;
 
     @RequestMapping("/")
     public ModelAndView homePage()
@@ -38,81 +32,6 @@ public class MainController {
         home.addObject("list",booksRepo.findAll());
 
         return home;
-    }
-
-    @RequestMapping(value = "/saveBook", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("bookid") String bookId, @RequestParam("bookname") String bookName, @RequestParam("authorname") String authorName,
-                             @RequestParam("publisher") String publisher, @RequestParam("bookprice") String bookPrice, @RequestParam("qty") String qty )
-    {
-        ModelAndView bookEdit = new ModelAndView("redirect:/BookView");
-        Books bookToSave ;
-        if(!bookId.isEmpty())
-        {
-            Optional<Books> users = booksRepo.findById(bookId);
-            bookToSave = users.get();
-        }
-        else
-        {
-            bookToSave = new Books();
-            bookToSave.setId(UUID.randomUUID().toString());
-        }
-        bookToSave.setAuthorName(authorName);
-        bookToSave.setBookName(bookName);
-        bookToSave.setPublisher(publisher);
-        bookToSave.setBookPrice(bookPrice);
-        bookToSave.setQty(qty);
-        booksRepo.save(bookToSave);
-        bookEdit.addObject("booklist", booksRepo.findAll());
-        return bookEdit;
-    }
-
-    @RequestMapping(value = "/saveCustomer", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("id") String id, @RequestParam("firstname") String firstName, @RequestParam("lastname") String lastName,
-                             @RequestParam("address") String address, @RequestParam("email") String email)
-    {
-        ModelAndView customerEdit = new ModelAndView("redirect:/");
-        Customer customerToSave ;
-        if(!id.isEmpty())
-        {
-            Optional<Customer> users2 = customerRepo.findById(id);
-            customerToSave = users2.get();
-        }
-        else
-        {
-            customerToSave = new Customer();
-            customerToSave.setId(UUID.randomUUID().toString());
-        }
-        customerToSave.setFirstName(firstName);
-        customerToSave.setLastName(lastName);
-        customerToSave.setAddress(address);
-        customerToSave.setEmail(email);
-        customerRepo.save(customerToSave);
-        customerEdit.addObject("customerlist", customerRepo.findAll());
-        return customerEdit;
-    }
-
-    @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("employeeid") String employeeId, @RequestParam("employeefirstname") String employeeFirstName,
-                             @RequestParam("employeelastname") String employeeLastName, @RequestParam("position") String position)
-    {
-        ModelAndView employeeEdit = new ModelAndView("redirect:/");
-        Employee employeeToSave;
-        if(!employeeId.isEmpty())
-        {
-            Optional<Employee> users3 = employeeRepo.findById(employeeId);
-            employeeToSave = users3.get();
-        }
-        else
-        {
-            employeeToSave = new Employee();
-            employeeToSave.setEmployeeId(UUID.randomUUID().toString());
-        }
-        employeeToSave.setEmployeeFirstName(employeeFirstName);
-        employeeToSave.setEmployeeLastName(employeeLastName);
-        employeeToSave.setPosition(position);
-        employeeRepo.save(employeeToSave);
-        employeeEdit.addObject("employeelist", employeeRepo.findAll());
-        return employeeEdit;
     }
 
 }

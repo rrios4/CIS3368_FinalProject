@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -169,60 +170,60 @@ body {
                </div> <!-- /#sidebar-wrapper -->
 
 
-<div class="container">
-<div class="row">
-<div class="col-lg-12 text-center">
-        <h1 class="mt-5" align="center">Customer Information</h1><br>
-    <form method="post" action="/saveCustomer">
-        <input type="hidden" name="id" value="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5" align="center">Customer Information</h1><br>
 
-        <input type="text"  placeholder="First Name" name="firstname" value="${selectedItem.getFirstName()}">
 
-        <input type="text"  placeholder="Last Name" name="lastname" value="${selectedItem.getLastName()}">
+                <form method="post" action="/saveCustomer">
+                    <input type="hidden" name="id" value="">
 
-        <input type="text"  placeholder="Address" name="address" value="${selectedItem.getAddress()}">
+                    <input type="text"  placeholder="First Name" name="firstname" value="${selectedItem.getFirstName()}">
 
-        <input type="text"  placeholder="Email" name="email" value="${selectedItem.getEmail()}">
-        <input type="submit" value="Submit">
-        <br><br>
-    </form>
-  <table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th>Order#</th>
-        <th>Employee</th>
-        <th>Customer</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>29.99</td>
-      </tr>
-      <tr>
-      <td>2</td>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>56.54</td>
-      </tr>
-      <tr>
-      <td>3</td>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>45.25</td>
-      </tr>
-    </tbody>
-  </table>
-  <p align="right">Powered By: AWS</p><br>
-            <ul class="list-unstyled">
-                <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>
-            </ul>
-  </div>
-  </div>
-</div>
+                    <input type="text"  placeholder="Last Name" name="lastname" value="${selectedItem.getLastName()}">
+
+                    <input type="text"  placeholder="Address" name="address" value="${selectedItem.getAddress()}">
+
+                    <input type="text"  placeholder="Email" name="email" value="${selectedItem.getEmail()}">
+                    <input type="submit" value="Submit">
+                    <br><br>
+                </form>
+
+              <table class="table table-dark table-striped">
+
+                 <thead>
+                 <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+                <c:forEach var = "listitem" items = "${customerList1}">
+                    <tr>
+                        <td>${listitem.getFirstName()}</td>
+                        <td>${listitem.getLastName()}</td>
+                        <td>${listitem.getAddress()}</td>
+                        <td>${listitem.getEmail()}</td>
+                    </tr>
+                </c:forEach>
+
+                </tbody>
+
+              </table>
+
+                <p align="right">Powered By: AWS</p><br>
+
+                <ul class="list-unstyled">
+                    <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>
+                </ul>
+              </div>
+          </div>
+    </div>
 
 </body>
 </html>

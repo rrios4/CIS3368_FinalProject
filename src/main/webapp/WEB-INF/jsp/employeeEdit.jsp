@@ -174,6 +174,8 @@ body {
             <div class="row">
                 <div class="col-lg-12 text-center">
                      <h1 class="mt-5" align="center">Employee Table</h1><br>
+
+
                     <form method="post" action="saveEmployee">
                         <input type="hidden" name="employeeid" value="">
 
@@ -185,7 +187,10 @@ body {
                         <input type="submit" value="Submit">
                         <br><br>
                     </form>
+
+
                      <table class="table table-dark table-striped">
+
                          <thead>
                           <tr>
                             <th>First Name</th>
@@ -193,19 +198,32 @@ body {
                             <th>Position</th>
                           </tr>
                          </thead>
+
                          <tbody>
 
+                         <c:forEach var = "listitem" items = "${employeeList1}">
+                             <tr>
+                                 <td>${listitem.getEmployeeFirstName()}</td>
+                                 <td>${listitem.getEmployeeLastName()}</td>
+                                 <td>${listitem.getPosition()}</td>
 
+                             </tr>
+                         </c:forEach>
 
                          </tbody>
+
+
                         </table>
+
                         <p align="right">Powered By: AWS</p><br>
-                     </div>
+
+                    <ul class="list-unstyled">
+                        <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>
+                     </ul>
 
                 </div>
+            </div>
         </div>
-            <ul class="list-unstyled">
-                <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>
-             </ul>
+
 </body>
 </html>
