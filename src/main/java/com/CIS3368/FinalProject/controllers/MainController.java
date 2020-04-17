@@ -42,7 +42,7 @@ public class MainController {
 
     @RequestMapping(value = "/saveBook", method = RequestMethod.POST)
     public ModelAndView save(@RequestParam("bookid") String bookId, @RequestParam("bookname") String bookName, @RequestParam("authorname") String authorName,
-                             @RequestParam("booktype") String bookType, @RequestParam("bookprice") String bookPrice, @RequestParam("qty") String qty )
+                             @RequestParam("publisher") String publisher, @RequestParam("bookprice") String bookPrice, @RequestParam("qty") String qty )
     {
         ModelAndView bookEdit = new ModelAndView("redirect:/");
         Books bookToSave ;
@@ -58,7 +58,7 @@ public class MainController {
         }
         bookToSave.setAuthorName(authorName);
         bookToSave.setBookName(bookName);
-        bookToSave.setBookType(bookType);
+        bookToSave.setPublisher(publisher);
         bookToSave.setBookPrice(bookPrice);
         bookToSave.setQty(qty);
         booksRepo.save(bookToSave);
@@ -92,8 +92,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/saveEmployee", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("employeeid") String employeeId, @RequestParam("employeefirstname") String employeeFirstName, @RequestParam("employeelastname") String employeeLastName,
-                             @RequestParam("position") String position)
+    public ModelAndView save(@RequestParam("employeeid") String employeeId, @RequestParam("employeefirstname") String employeeFirstName,
+                             @RequestParam("employeelastname") String employeeLastName, @RequestParam("position") String position)
     {
         ModelAndView employeeEdit = new ModelAndView("redirect:/");
         Employee employeeToSave;
@@ -114,10 +114,5 @@ public class MainController {
         employeeEdit.addObject("employeelist", employeeRepo.findAll());
         return employeeEdit;
     }
-
-
-
-
-
 
 }

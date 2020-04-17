@@ -17,8 +17,8 @@ public class Books {
     private String bookName;
     @Column(name="authorname")
     private String authorName;
-    @Column(name="booktype")
-    private String bookType;
+    @Column(name="publisher")
+    private String publisher;
     @Column(name="bookprice")
     private String bookPrice;
     @Column(name="qty")
@@ -29,12 +29,12 @@ public class Books {
 
     }
 
-    public Books(String bookId, String bookName, String authorName, String bookType, String bookPrice, String qty)
+    public Books(String bookId, String bookName, String authorName, String publisher, String bookPrice, String qty)
     {
         this.bookId = bookId;
         this.bookName = bookName;
         this.authorName = authorName;
-        this.bookType = bookType;
+        this.publisher = publisher;
         this.bookPrice = bookPrice;
         this.qty = qty;
 
@@ -65,12 +65,12 @@ public class Books {
         this.authorName = authorName;
     }
 
-    public String getBookType() {
-        return bookType;
+    public String getPublisher() {
+        return publisher;
     }
 
-    public void setBookType(String bookType) {
-        this.bookType = bookType;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
     public String getBookPrice() {

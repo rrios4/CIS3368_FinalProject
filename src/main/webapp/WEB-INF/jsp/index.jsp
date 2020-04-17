@@ -10,23 +10,7 @@
 
 <body>
 
-<a href="bookEdit.jsp"> <button>Books</button> </a>
 
-<form method="post" action="/saveBook">
-    <input type="hidden" name="bookid" value="">
-    <br>Book Name: <br>
-    <input type="text" name="bookname" value="${selectedItem.getBookName()}">
-    <br>Author Name: <br>
-    <input type="text" name="authorname" value="${selectedItem.getAuthorName()}">
-    <br>Book Type: <br>
-    <input type="text" name="booktype" value="${selectedItem.getBookType()}">
-    <br>Book Price: <br>
-    <input type="text" name="bookprice" value="${selectedItem.getBookPrice()}">
-    <br>Quantity: <br>
-    <input type="text" name="qty" value="${selectedItem.getQTY()}">
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
 
 <br><br>
 <a href="customerEdit.jsp"> <button>Customers</button> </a>
@@ -45,20 +29,7 @@
     <input type="submit" value="Submit">
 </form>
 
-<br><br>
-<a href="employeeEdit.jsp"> <button>Employees</button> </a>
 
-<form method="post" action="saveEmployee">
-    <input type="hidden" name="employeeid" value="">
-    <br>First Name: <br>
-    <input type="text" name="employeefirstname" value="${selectedItem.getEmployeeFirstName()}">
-    <br>Last Name: <br>
-    <input type="text" name="employeelastname" value="${selectedItem.getEmployeeLastName()}">
-    <br>Postion: <br>
-    <input type="text" name="position" value="${selectedItem.getPosition()}">
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
 
 <br><br>
 <a href="ordersView.jsp"> <button>Orders</button> </a>

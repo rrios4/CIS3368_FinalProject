@@ -170,23 +170,51 @@ body {
                    </ul>
                </div> <!-- /#sidebar-wrapper -->
 
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-12 text-center">
+                   <h1 class="mt-5" align="center">Book Information</h1><br>
+                   <table class="table table-dark table-striped">
+                       <thead>
+                       <tr>
+                           <th>Book Name</th>
+                           <th>Author Name</th>
+                           <th>Publisher</th>
+                           <th>Book Price</th>
+                           <th>Qty</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       <c:forEach var = "listitem" items = "${booklist}">
+                           <tr>
+                               <td>${listitem.getFirstName()}</td>
+                               <td>${listitem.getLastName()}</td>
+                           </tr>
+                       </c:forEach>
 
-    <form method="post" action="/save">
-        <input type="hidden" name="bookid" value="">
-        <br>Book Name: <br>
-        <input type="text" name="bookname" value="${selectedItem.getBookName()}">
-        <br>Author Name: <br>
-        <input type="text" name="authorname" value="${selectedItem.getAuthorName()}">
-        <br>Book Type: <br>
-        <input type="text" name="booktype" value="${selectedItem.getBookType()}">
-        <br>Book Price: <br>
-        <input type="text" name="bookprice" value="${selectedItem.getBookPrice()}">
-        <br>Quantity: <br>
-        <input type="text" name="qty" value="${selectedItem.getQTY()}">
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-    <ul class="list-unstyled">
+                       </tbody>
+                   </table>
+                   <p align="right">Powered By: AWS</p><br>
+               </div>
+               <form method="post" action="/saveBook">
+                   <input type="hidden" name="bookid" value="">
+                   <br>Book Name: <br>
+                   <input type="text" name="bookname" value="${selectedItem.getBookName()}">
+                   <br>Author Name: <br>
+                   <input type="text" name="authorname" value="${selectedItem.getAuthorName()}">
+                   <br>Publisher: <br>
+                   <input type="text" name="publisher" value="${selectedItem.getPublisher()}">
+                   <br>Book Price: <br>
+                   <input type="text" name="bookprice" value="${selectedItem.getBookPrice()}">
+                   <br>Quantity: <br>
+                   <input type="text" name="qty" value="${selectedItem.getQTY()}">
+                   <br><br>
+                   <input type="submit" value="Submit">
+                   <br><br>
+               </form>
+           </div>
+       </div>
+        <ul class="list-unstyled">
                 <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>
             </ul>
 </body>
