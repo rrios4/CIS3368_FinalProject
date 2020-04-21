@@ -172,11 +172,20 @@ body {
                </div> <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
+
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h1 class="mt-5">Welcome!</h1>
-          <p class="lead">Where stories can be learned!</p><br>
+          <p class="lead">Where stories can be learned!</p>
+          <p class="lead" id="date">$0</p><br>
+                                      <script type="text/javascript">
+                                          n =  new Date();
+                                          y = n.getFullYear();
+                                          m = n.getMonth() + 1;
+                                          d = n.getDate();
+                                          document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+                                          </script>
           <ul class="list-unstyled">
           </ul>
 

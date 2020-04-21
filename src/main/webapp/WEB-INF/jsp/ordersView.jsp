@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Orders</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -168,40 +168,118 @@ body {
                    </ul>
                </div> <!-- /#sidebar-wrapper -->
 
+               <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h2 class="mt-5" align="center">Enter Order</h2>
+                            <h5 class="mt-1" id="date">$0</h5><br>
+                            <script type="text/javascript">
+                                n =  new Date();
+                                y = n.getFullYear();
+                                m = n.getMonth() + 1;
+                                d = n.getDate();
+                                document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+                                </script>
+                                                <form method="post" action="saveOrder">
+                                                    <input type="hidden" name="orderid" value="">
+                                                    <input type="hidden" name="employeeid" value="">
+                                                    <input type="hidden" name="customerid" value="">
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                              <span class="input-group-text">Today's Date'</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="Date">
+                                                          </div>
+
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                                                                    Select Employee
+                                                                  </button>
+                                                                  <div class="dropdown-menu">
+                                                                    <ul class="dropdown-item">
+                                                                            <li>
+                                                                                    <c:forEach var = "listitem" items = "${employeeList1}">
+                                                                                        <p>${listitem.getEmployeeFirstName()}</p>
+                                                                                    </c:forEach>
+                                                                            </li>
+                                                                    </ul>
+                                                                  </div>
+
+                                                            </div>
+                                                            <input type="text" class="form-control" name="employee" placeholder="Name" list="employeenames">
+                                                          </div>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                              <span class="input-group-text">Customer</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="First Name">
+                                                            <input type="text" class="form-control" placeholder="Last Name">
+                                                          </div>
+                                                  <table class="table table-striped">
+                                                    <thead class="thead-dark">
+                                                      <tr>
+                                                        <th>Qty</th>
+                                                        <th>Book Name</th>
+                                                        <th>Unit Price</th>
+                                                      </tr>
+                                                    </thead>
+                                                                <tbody>
+
+                                                                  <c:forEach var = "listitem" items = "${orderList1}">
+                                                                    <tr>
+                                                                        <td class="drop-down-item">Item</td>
+                                                                        <td class="drop-down-item">Item</td>
+                                                                        <td class="drop-down-item">Item</td>
+
+                                                                     </tr>
+                                                                  </c:forEach>
+
+                                                                 </tbody>
+                                                  </table>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                              <span class="input-group-text">Order Total</span>
+                                                            </div>
+                                                            <input type="text" class="form-control" placeholder="Order Total">
+
+                                                          </div>
+                                                    <input type="submit" value="Submit">
+                                                    <br><br>
+                                                </form>
+                        </div>
+                    </div>
+               </div>
+
 
 <div class="container">
 <div class="row">
 <div class="col-lg-12 text-center">
-        <h1 class="mt-5" align="center">Order Invoices</h1><br>
+        <h2 class="mt-5" align="center">Order History</h2><br>
   <table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th>Order#</th>
-        <th>Employee</th>
-        <th>Customer</th>
-        <th>Total</th>
+        <th>Order Date</th>
+        <th>Order ID</th>
+        <th>Employee ID</th>
+        <th>Customer ID</th>
+        <th>Order Total</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>29.99</td>
-      </tr>
-      <tr>
-      <td>2</td>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>56.54</td>
-      </tr>
-      <tr>
-      <td>3</td>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>45.25</td>
-      </tr>
-    </tbody>
+                        <tbody>
+
+                         <c:forEach var = "listitem" items = "${orderList1}">
+                             <tr>
+                                 <td>${listitem.getOrderDate()}</td>
+                                 <td>${listitem.getOrderId()}</td>
+                                 <td>${listitem.getEmployeeId()}</td>
+                                 <td>${listitem.getCustomerId()}</td>
+                                 <td>${listitem.getOrderTotal()}</td>
+
+                             </tr>
+                         </c:forEach>
+
+                         </tbody>
   </table>
   <p align="right">Powered By: AWS</p><br>
             <ul class="list-unstyled">
