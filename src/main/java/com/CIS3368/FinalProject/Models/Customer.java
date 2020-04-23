@@ -7,7 +7,7 @@ import java.util.UUID;
 @Table(name="customer")
 public class Customer {
     @Id
-    @Column(name="id")
+    @Column(name="customerid")
     private String id;
     @Column(name="firstname")
     private String firstName;

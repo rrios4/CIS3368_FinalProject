@@ -21,22 +21,20 @@ public class Books {
     private String publisher;
     @Column(name="bookprice")
     private String bookPrice;
-    @Column(name="qty")
-    private String qty;
 
     public Books()
     {
 
     }
 
-    public Books(String bookId, String bookName, String authorName, String publisher, String bookPrice, String qty)
+    public Books(String bookId, String bookName, String authorName, String publisher, String bookPrice)
     {
         this.bookId = bookId;
         this.bookName = bookName;
         this.authorName = authorName;
         this.publisher = publisher;
         this.bookPrice = bookPrice;
-        this.qty = qty;
+
 
     }
 
@@ -81,11 +79,5 @@ public class Books {
         this.bookPrice = bookPrice;
     }
 
-    public String getQty() {
-        return qty;
-    }
 
-    public void setQty(String qty) {
-        this.qty = qty;
-    }
 }
