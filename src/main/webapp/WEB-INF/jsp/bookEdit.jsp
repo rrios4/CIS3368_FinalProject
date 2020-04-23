@@ -187,7 +187,6 @@ body {
 
                          <input type="text" placeholder="Price" name="bookprice" value="${selectedItem.getBookPrice()}">
 
-                         <input type="text" placeholder="Quantity" name="qty" value="${selectedItem.getQTY()}">
                          <input type="submit" value="Submit">
                          <br><br>
                     </form>
@@ -201,7 +200,6 @@ body {
                            <th>Author Name</th>
                            <th>Publisher</th>
                            <th>Book Price</th>
-                           <th>Qty</th>
                        </tr>
                        </thead>
 
@@ -212,7 +210,6 @@ body {
                                <td>${listitem.getAuthorName()}</td>
                                <td>${listitem.getPublisher()}</td>
                                <td>${listitem.getBookPrice()}</td>
-                               <td>${listitem.getQty()}</td>
                            </tr>
                        </c:forEach>
                        </tbody>

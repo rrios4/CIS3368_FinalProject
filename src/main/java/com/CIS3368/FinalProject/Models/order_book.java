@@ -1,22 +1,21 @@
 package com.CIS3368.FinalProject.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name ="order_book")
 public class order_book {
 
     @Id
+    @Column(name = "order_bookid")
+    private String order_bookId;
     @Column(name = "orderid")
     private String order_book_orderid;
-    @Id
     @Column(name = "bookid")
     private String order_book_bookid;
     @Column(name = "bookqty")
     private String bookqty;
+
 
     public order_book(){
 

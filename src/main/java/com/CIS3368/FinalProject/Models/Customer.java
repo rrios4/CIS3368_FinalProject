@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name="customer")
+@Table(name="customer_table")
 public class Customer {
     @Id
     @Column(name="customerid")
-    private String id;
+    private String customerId;
     @Column(name="firstname")
     private String firstName;
     @Column(name="lastname")
@@ -25,8 +25,8 @@ public class Customer {
 
     }
 
-    public Customer(String id, String firstName, String lastName, String address, String email) {
-        this.id = id;
+    public Customer(String customerId, String firstName, String lastName, String address, String email) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -34,12 +34,12 @@ public class Customer {
 
     }
 
-    public String getId() {
-        return id;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getFirstName() {

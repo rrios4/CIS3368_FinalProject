@@ -31,7 +31,7 @@ public class BookController {
     public ModelAndView save(@RequestParam("bookid") String bookId, @RequestParam("bookname") String bookName,
                              @RequestParam("authorname") String authorName,
                              @RequestParam("publisher") String publisher,
-                             @RequestParam("bookprice") String bookPrice, @RequestParam("qty") String qty )
+                             @RequestParam("bookprice") String bookPrice )
     {
         ModelAndView bookEdit = new ModelAndView("redirect:/BookView");
         Books bookToSave ;
@@ -49,7 +49,6 @@ public class BookController {
         bookToSave.setBookName(bookName);
         bookToSave.setPublisher(publisher);
         bookToSave.setBookPrice(bookPrice);
-        bookToSave.setQty(qty);
         bookRepo.save(bookToSave);
         bookEdit.addObject("booklist", bookRepo.findAll());
         return bookEdit;

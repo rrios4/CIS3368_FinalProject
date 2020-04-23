@@ -177,7 +177,7 @@ body {
 
 
                 <form method="post" action="/saveCustomer">
-                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="customerid" value="">
 
                     <input type="text"  placeholder="First Name" name="firstname" value="${selectedItem.getFirstName()}">
 

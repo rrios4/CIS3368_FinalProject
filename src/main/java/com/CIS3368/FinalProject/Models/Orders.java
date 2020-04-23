@@ -15,8 +15,6 @@ public class Orders {
     private String customerId;
     @Column(name="employeeid")
     private String employeeId;
-    @Column(name="bookid")
-    private String bookId;
     @Column(name = "orderdate")
     private String orderDate;
     @Column(name = "ordertotal")
@@ -27,12 +25,11 @@ public class Orders {
 
     }
 
-    public Orders(String orderId, String customerId, String employeeId, String bookId, String orderTotal)
+    public Orders(String orderId, String customerId, String employeeId, String orderTotal)
     {
         this.orderId = orderId;
         this.customerId = customerId;
         this.employeeId = employeeId;
-        this.bookId = bookId;
         this.orderTotal = orderTotal;
     }
 
@@ -58,14 +55,6 @@ public class Orders {
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
-    }
-
-    public String getBookId() {
-        return bookId;
-    }
-
-    public void setBookId(String bookId) {
-        this.bookId = bookId;
     }
 
     public String getOrderTotal() {

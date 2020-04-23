@@ -28,20 +28,20 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/saveCustomer", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("id") String id, @RequestParam("firstname") String firstName, @RequestParam("lastname") String lastName,
+    public ModelAndView save(@RequestParam("customerid") String customerId, @RequestParam("firstname") String firstName, @RequestParam("lastname") String lastName,
                              @RequestParam("address") String address, @RequestParam("email") String email)
     {
         ModelAndView customerEdit = new ModelAndView("redirect:/CustomerView");
         Customer customerToSave ;
-        if(!id.isEmpty())
+        if(!customerId.isEmpty())
         {
-            Optional<Customer> users2 = customerRepo.findById(id);
+            Optional<Customer> users2 = customerRepo.findById(customerId);
             customerToSave = users2.get();
         }
         else
         {
             customerToSave = new Customer();
-            customerToSave.setId(UUID.randomUUID().toString());
+            customerToSave.setCustomerId(UUID.randomUUID().toString());
         }
         customerToSave.setFirstName(firstName);
         customerToSave.setLastName(lastName);
