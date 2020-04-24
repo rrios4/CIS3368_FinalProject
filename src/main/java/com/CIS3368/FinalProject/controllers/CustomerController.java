@@ -29,7 +29,8 @@ public class CustomerController {
 
     @RequestMapping(value = "/saveCustomer", method = RequestMethod.POST)
     public ModelAndView save(@RequestParam("customerid") String customerId, @RequestParam("firstname") String firstName, @RequestParam("lastname") String lastName,
-                             @RequestParam("address") String address, @RequestParam("email") String email)
+                             @RequestParam("address") String address, @RequestParam("city") String city, @RequestParam("state") String state,
+                             @RequestParam("zipcode") String zipcode, @RequestParam("email") String email)
     {
         ModelAndView customerEdit = new ModelAndView("redirect:/CustomerView");
         Customer customerToSave ;
@@ -46,6 +47,9 @@ public class CustomerController {
         customerToSave.setFirstName(firstName);
         customerToSave.setLastName(lastName);
         customerToSave.setAddress(address);
+        customerToSave.setCity(city);
+        customerToSave.setState(state);
+        customerToSave.setZipcode(zipcode);
         customerToSave.setEmail(email);
         customerRepo.save(customerToSave);
         customerEdit.addObject("customerlist", customerRepo.findAll());
