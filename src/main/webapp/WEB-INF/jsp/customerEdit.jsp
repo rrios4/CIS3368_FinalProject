@@ -185,6 +185,12 @@ body {
 
                     <input type="text"  placeholder="Address" name="address" value="${selectedItem.getAddress()}">
 
+                    <input type="text"  placeholder="City" name="city" value="${selectedItem.getCity()}">
+
+                    <input type="text"  placeholder="Sate" name="state" value="${selectedItem.getState()}">
+
+                    <input type="text"  placeholder="Zipcode" name="zipcode" value="${selectedItem.getZipcode()}">
+
                     <input type="text"  placeholder="Email" name="email" value="${selectedItem.getEmail()}">
                     <input type="submit" value="Submit">
                     <br><br>
@@ -197,7 +203,11 @@ body {
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zipcode</th>
                     <th>Email</th>
+                    <th>Modify</th>
                 </tr>
                 </thead>
 
@@ -208,6 +218,9 @@ body {
                         <td>${listitem.getFirstName()}</td>
                         <td>${listitem.getLastName()}</td>
                         <td>${listitem.getAddress()}</td>
+                        <td>${listitem.getCity()}</td>
+                        <td>${listitem.getState()}</td>
+                        <td>${listitem.getZipcode()}</td>
                         <td>${listitem.getEmail()}</td>
                     </tr>
                 </c:forEach>
