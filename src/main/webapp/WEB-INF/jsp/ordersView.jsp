@@ -188,22 +188,22 @@ body {
                                                             <div class="input-group-prepend">
                                                               <span class="input-group-text">Today's Date'</span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Date">
+                                                            <input id="date" type="text" class="form-control" placeholder="Date" value="${selectedItem.getOrderDate()}">
                                                           </div>
 
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend">
                                                                     <span class="input-group-text">Employee</span>
                                                             </div>
-                                                            <input type="text" class="form-control" name="employeeF" placeholder="First Name">
-                                                            <input type="text" class="form-control" name="employeeL"placeholder="Last Name">
+                                                            <input type="text" class="form-control" name="employeeF" placeholder="First Name" value="${selectedItem.getEmployeeFirstName()}">
+                                                            <input type="text" class="form-control" name="employeeL"placeholder="Last Name" value="${selectedItem.getEmployeeLastName()}">
                                                           </div>
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend">
                                                               <span class="input-group-text">Customer</span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="First Name">
-                                                            <input type="text" class="form-control" placeholder="Last Name">
+                                                            <input type="text" class="form-control" placeholder="First Name" value="${selectedItem.getFirstName()}">
+                                                            <input type="text" class="form-control" placeholder="Last Name" value ="${selectedItem.getLastName()}">
                                                           </div>
                                                   <table class="table table-striped">
                                                     <thead class="thead-dark">
@@ -215,9 +215,9 @@ body {
                                                     </thead>
                                                                 <tbody>
                                                                     <tr>
-                                                                        <td><input type="text" class"form-control"></td>
-                                                                        <td><input type="text" class"form-control"></td>
-                                                                        <td><input type="text" class"form-control"></td>
+                                                                        <td><input type="text" class"form-control" value="${selectedItem.getBookqty()}"></td>
+                                                                        <td><input type="text" class"form-control" value="${selectedItem.getBookName()}"></td>
+                                                                        <td><input type="text" class"form-control" value="${selectedItem.getBookPrice()}"></td>
                                                                      </tr>
                                                                  </tbody>
                                                   </table>
@@ -225,7 +225,7 @@ body {
                                                             <div class="input-group-prepend">
                                                               <span class="input-group-text">Order Total</span>
                                                             </div>
-                                                            <input type="text" class="form-control" placeholder="Order Total">
+                                                            <input type="text" class="form-control" placeholder="Order Total" value="${selectedItem.getOrderTotal()}">
 
                                                           </div>
                                                     <input type="submit" value="Submit">
