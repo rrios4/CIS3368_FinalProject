@@ -25,7 +25,6 @@ public class Customer {
     @Column(name="email")
     private String email;
 
-    //private String dob;
     @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_customerid",referencedColumnName = "customerid")
     private List<Orders> orders;

@@ -192,6 +192,7 @@ body {
                     <input type="text"  placeholder="Zipcode" name="zipcode" value="${selectedItem.getZipcode()}">
 
                     <input type="text"  placeholder="Email" name="email" value="${selectedItem.getEmail()}">
+
                     <input type="submit" value="Submit">
                     <br><br>
                 </form>
@@ -221,7 +222,7 @@ body {
                         <td>${listitem.getCity()}</td>
                         <td>${listitem.getState()}</td>
                         <td>${listitem.getZipcode()}</td>
-                        <td>${listitem.getEmail()}</td>
+                        <td>${listitem.getEmail()}</td
                     </tr>
                 </c:forEach>
 

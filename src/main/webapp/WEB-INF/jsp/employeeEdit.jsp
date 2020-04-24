@@ -184,6 +184,19 @@ body {
                         <input type="text" placeholder="Last Name" name="employeelastname" value="${selectedItem.getEmployeeLastName()}">
 
                         <input type="text" placeholder="Position" name="position" value="${selectedItem.getPosition()}">
+
+                        <input type="text" placeholder="Pay Rate" name="payrate" value="${selectedItem.getPayRate()}">
+
+                        <input type="text" placeholder="Address" name="address" value="${selectedItem.getAddress()}">
+
+                        <input type="text" placeholder="City" name="city" value="${selectedItem.getCity()}">
+
+                        <input type="text" placeholder="State" name="state" value="${selectedItem.getState()}">
+
+                        <input type="text" placeholder="Zipcode" name="zipcode" value="${selectedItem.getZipcode()}">
+
+                        <input type="text" placeholder="Email" name="email" value="${selectedItem.getEmail()}">
+
                         <input type="submit" value="Submit">
                         <br><br>
                     </form>
@@ -196,6 +209,13 @@ body {
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Position</th>
+                            <th>Pay Rate</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zipcode</th>
+                            <th>Email</th>
+                            <th>Modify</th>
                           </tr>
                          </thead>
 
@@ -206,7 +226,13 @@ body {
                                  <td>${listitem.getEmployeeFirstName()}</td>
                                  <td>${listitem.getEmployeeLastName()}</td>
                                  <td>${listitem.getPosition()}</td>
-
+                                 <td>${listitem.getPayRate()}</td>
+                                 <td>${listitem.getAddress()}</td>
+                                 <td>${listitem.getCity()}</td>
+                                 <td>${listitem.getState()}</td>
+                                 <td>${listitem.getZipcode()}</td>
+                                 <td>${listitem.getEmail()}</td>
+<%--                                 <td><a href="/delete/${listitem.getEmployeeId()}">Delete</a></td>--%>
                              </tr>
                          </c:forEach>
 
