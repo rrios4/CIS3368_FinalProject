@@ -5,6 +5,7 @@ import com.CIS3368.FinalProject.Models.CustomerRepo;
 import com.CIS3368.FinalProject.Models.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +55,12 @@ public class CustomerController {
         customerRepo.save(customerToSave);
         customerEdit.addObject("customerlist", customerRepo.findAll());
         return customerEdit;
+    }
+    @RequestMapping( value = "/deleteCustomer/{customerid}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable("customerid") String customerId){
+        ModelAndView deleteCustomer = new ModelAndView("redirect:/CustomerView");
+        customerRepo.deleteById(customerId);
+        return deleteCustomer;
     }
 
 }

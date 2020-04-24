@@ -232,7 +232,7 @@ body {
                                  <td>${listitem.getState()}</td>
                                  <td>${listitem.getZipcode()}</td>
                                  <td>${listitem.getEmail()}</td>
-<%--                                 <td><a href="/delete/${listitem.getEmployeeId()}">Delete</a></td>--%>
+                                 <td><a href="/deleteEmployee/${listitem.getEmployeeId()}"><button type="button">Delete</button></a></td>
                              </tr>
                          </c:forEach>
 

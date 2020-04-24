@@ -60,5 +60,12 @@ public class EmployeeController {
         return employeeEdit;
     }
 
+    @RequestMapping( value = "/deleteEmployee/{employeeid}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable("employeeid") String employeeId){
+        ModelAndView deleteEmployee = new ModelAndView("redirect:/EmployeeView");
+        employeeRepo.deleteById(employeeId);
+        return deleteEmployee;
+    }
+
 
 }

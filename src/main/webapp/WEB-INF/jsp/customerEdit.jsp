@@ -208,7 +208,7 @@ body {
                     <th>State</th>
                     <th>Zipcode</th>
                     <th>Email</th>
-                    <th>Modify</th>
+                     <th>Modify</th>
                 </tr>
                 </thead>
 
@@ -223,9 +223,10 @@ body {
                         <td>${listitem.getState()}</td>
                         <td>${listitem.getZipcode()}</td>
                         <td>${listitem.getEmail()}</td
+                        <td><a href="/deleteCustomer/${listitem.getCustomerId()}"><button type="button">Delete</button></a></td>
+
                     </tr>
                 </c:forEach>
-
                 </tbody>
 
               </table>

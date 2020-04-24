@@ -25,9 +25,9 @@ public class Customer {
     @Column(name="email")
     private String email;
 
-    @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
+/*    @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_customerid",referencedColumnName = "customerid")
-    private List<Orders> orders;
+    private List<Orders> orders;*/
 
     public Customer()
     {
