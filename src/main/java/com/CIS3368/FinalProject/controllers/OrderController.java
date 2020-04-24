@@ -22,6 +22,9 @@ public class OrderController {
     @Autowired
     private CustomerRepo customerRepo;
 
+    @Autowired
+    private order_bookRepo orderBookRepo;
+
     @RequestMapping("/orderView")
     public ModelAndView OrderView()
     {
@@ -31,13 +34,16 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("orderid") String orderId, @RequestParam("employeeid") String employeeId, @RequestParam("employeefirstname") String employeeFirstName,
-                             @RequestParam("employeelastname") String employeeLastName, @RequestParam("id") String id, @RequestParam("bookid") String bookId)
+    public ModelAndView save(@RequestParam("orderid") String orderId,@RequestParam("orderdate") String orderdate, @RequestParam("ordertotal") String ordertotal, @RequestParam("employeeid") String employeeId,
+                             @RequestParam("employeefirstname") String employeeFirstName, @RequestParam("employeelastname") String employeeLastName, @RequestParam("customerid") String customerId,
+                             @RequestParam("firstname") String firstName,@RequestParam("lastname") String lastName,@RequestParam("bookid") String bookId,@RequestParam("bookname") String bookName,
+                             @RequestParam("bookprice") String bookPrice,@RequestParam("bookqty") String bookqty)
     {
         ModelAndView ordersView = new ModelAndView("redirect:/orderView");
         Orders orderToSave;
         Employee employeeToSave;
         Customer customerToSave;
+        Books bookToSave;
         if(!orderId.isEmpty())
         {
             Optional<Orders> users3 = ordersRepo.findById(orderId);
@@ -48,8 +54,8 @@ public class OrderController {
             employeeToSave = users4.get();
 
         }
-        else if(!id.isEmpty()){
-            Optional<Customer> users5 = customerRepo.findById(id);
+        else if(!customerId.isEmpty()){
+            Optional<Customer> users5 = customerRepo.findById(customerId);
             customerToSave = users5.get();
 
         }

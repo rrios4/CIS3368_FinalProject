@@ -21,9 +21,9 @@ public class Orders {
     @Column(name = "ordertotal")
     private String orderTotal;
 
-    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
+    /*@OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_bookid2", referencedColumnName = "bookid")
-    private List<order_book> orderBook;
+    private List<order_book> orderBook;*/
 
     public Orders()
     {

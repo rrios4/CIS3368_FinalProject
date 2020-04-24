@@ -193,21 +193,10 @@ body {
 
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend">
-                                                                  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
-                                                                    Select Employee
-                                                                  </button>
-                                                                  <div class="dropdown-menu">
-                                                                    <ul class="dropdown-item">
-                                                                            <li>
-                                                                                    <c:forEach var = "listitem" items = "${employeeList1}">
-                                                                                        <p>${listitem.getEmployeeFirstName()}</p>
-                                                                                    </c:forEach>
-                                                                            </li>
-                                                                    </ul>
-                                                                  </div>
-
+                                                                    <span class="input-group-text">Employee</span>
                                                             </div>
-                                                            <input type="text" class="form-control" name="employee" placeholder="Name" list="employeenames">
+                                                            <input type="text" class="form-control" name="employeeF" placeholder="First Name">
+                                                            <input type="text" class="form-control" name="employeeL"placeholder="Last Name">
                                                           </div>
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend">
@@ -225,16 +214,11 @@ body {
                                                       </tr>
                                                     </thead>
                                                                 <tbody>
-
-                                                                  <c:forEach var = "listitem" items = "${orderList1}">
                                                                     <tr>
-                                                                        <td class="drop-down-item">Item</td>
-                                                                        <td class="drop-down-item">Item</td>
-                                                                        <td class="drop-down-item">Item</td>
-
+                                                                        <td><input type="text" class"form-control"></td>
+                                                                        <td><input type="text" class"form-control"></td>
+                                                                        <td><input type="text" class"form-control"></td>
                                                                      </tr>
-                                                                  </c:forEach>
-
                                                                  </tbody>
                                                   </table>
                                                         <div class="input-group mb-3">
@@ -250,7 +234,6 @@ body {
                         </div>
                     </div>
                </div>
-
 
 <div class="container">
 <div class="row">
