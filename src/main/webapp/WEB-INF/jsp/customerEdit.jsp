@@ -224,7 +224,6 @@ body {
                         <td>${listitem.getZipcode()}</td>
                         <td>${listitem.getEmail()}</td
                         <td><a href="/deleteCustomer/${listitem.getCustomerId()}"><button type="button">Delete</button></a></td>
-
                     </tr>
                 </c:forEach>
                 </tbody>

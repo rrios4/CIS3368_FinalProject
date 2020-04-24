@@ -17,7 +17,7 @@ public class Orders {
     @Column(name="employeeid")
     private String employeeId;
     @Column(name = "orderdate")
-    private String orderDate;
+    private String orderdate;
     @Column(name = "ordertotal")
     private String orderTotal;
 
@@ -30,11 +30,12 @@ public class Orders {
 
     }
 
-    public Orders(String orderId, String customerId, String employeeId, String orderTotal)
+    public Orders(String orderId, String customerId, String employeeId,String orderdate, String orderTotal)
     {
         this.orderId = orderId;
         this.customerId = customerId;
         this.employeeId = employeeId;
+        this.orderdate = orderdate;
         this.orderTotal = orderTotal;
     }
 
@@ -71,10 +72,10 @@ public class Orders {
     }
 
     public String getOrderDate() {
-        return orderDate;
+        return orderdate;
     }
 
     public void setOrderDate(String orderDate) {
-        this.orderDate = orderDate;
+        this.orderdate = orderdate;
     }
 }
