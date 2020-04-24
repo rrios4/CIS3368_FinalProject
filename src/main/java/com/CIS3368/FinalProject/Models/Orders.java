@@ -2,6 +2,7 @@ package com.CIS3368.FinalProject.Models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -19,6 +20,10 @@ public class Orders {
     private String orderDate;
     @Column(name = "ordertotal")
     private String orderTotal;
+
+    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_bookid2", referencedColumnName = "bookid")
+    private List<order_book> orderBook;
 
     public Orders()
     {

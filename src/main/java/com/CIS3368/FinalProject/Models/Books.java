@@ -1,9 +1,7 @@
 package com.CIS3368.FinalProject.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -21,6 +19,10 @@ public class Books {
     private String publisher;
     @Column(name="bookprice")
     private String bookPrice;
+
+    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_bookid", referencedColumnName = "bookid")
+    private List<order_book> orderBooks;
 
     public Books()
     {
