@@ -1,5 +1,10 @@
 package com.CIS3368.FinalProject.Models;
 
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
@@ -20,9 +25,9 @@ public class Books {
     @Column(name="bookprice")
     private String bookPrice;
 
-    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
+/*    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_bookid", referencedColumnName = "bookid")
-    private List<order_book> orderBooks;
+    private List<order_book> orderBooks;*/
 
     public Books()
     {
@@ -39,7 +44,6 @@ public class Books {
 
 
     }
-
 
     public String getId() {
         return bookId;

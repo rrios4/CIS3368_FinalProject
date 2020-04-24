@@ -200,6 +200,7 @@ body {
                            <th>Author Name</th>
                            <th>Publisher</th>
                            <th>Book Price</th>
+                           <th>Modify</th>
                        </tr>
                        </thead>
 
@@ -210,6 +211,7 @@ body {
                                <td>${listitem.getAuthorName()}</td>
                                <td>${listitem.getPublisher()}</td>
                                <td>${listitem.getBookPrice()}</td>
+                               <td><a href="/deleteBook/${listitem.getId()}"><button type="button">Delete</button></a></td>
                            </tr>
                        </c:forEach>
                        </tbody>

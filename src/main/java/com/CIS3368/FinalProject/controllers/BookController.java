@@ -54,5 +54,12 @@ public class BookController {
         return bookEdit;
     }
 
+    @RequestMapping( value = "/deleteBook/{bookid}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable("bookid") String bookId){
+        ModelAndView deleteBook = new ModelAndView("redirect:/BookView");
+        bookRepo.deleteById(bookId);
+        return deleteBook;
+    }
+
 
 }
