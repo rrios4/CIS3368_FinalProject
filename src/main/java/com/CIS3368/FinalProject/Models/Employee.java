@@ -1,9 +1,7 @@
 package com.CIS3368.FinalProject.Models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +17,10 @@ public class Employee {
     private String employeeLastName;
     @Column(name="position")
     private String position;
+
+    @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_employeeid", referencedColumnName = "employeeid")
+    private List<Orders> orders;
 
     public Employee()
     {

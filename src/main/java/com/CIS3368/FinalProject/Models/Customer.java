@@ -1,6 +1,7 @@
 package com.CIS3368.FinalProject.Models;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +20,9 @@ public class Customer {
     private String email;
 
     //private String dob;
+    @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_customerid",referencedColumnName = "customerid")
+    private List<Orders> orders;
 
     public Customer()
     {

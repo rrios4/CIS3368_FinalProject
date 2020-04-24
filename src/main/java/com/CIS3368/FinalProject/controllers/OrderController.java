@@ -60,7 +60,7 @@ public class OrderController {
             employeeToSave = new Employee();
             employeeToSave.setEmployeeId(UUID.randomUUID().toString());
             customerToSave =  new Customer();
-            customerToSave.setId(UUID.randomUUID().toString());
+            customerToSave.setCustomerId(UUID.randomUUID().toString());
         }
 
         ordersView.addObject("orderlist", ordersRepo.findAll());
