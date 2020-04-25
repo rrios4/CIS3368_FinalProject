@@ -238,32 +238,34 @@ body {
 <div class="container">
 <div class="row">
 <div class="col-lg-12 text-center">
+
         <h2 class="mt-5" align="center">Order History</h2><br>
-  <table class="table table-dark table-striped">
-    <thead>
-      <tr>
-        <th>Order Date</th>
-        <th>Order ID</th>
-        <th>Employee ID</th>
-        <th>Customer ID</th>
-        <th>Order Total</th>
-      </tr>
-    </thead>
-                        <tbody>
 
-                         <c:forEach var = "listitem" items = "${orderList1}">
-                             <tr>
-                                 <td>${listitem.getOrderDate()}</td>
-                                 <td>${listitem.getOrderId()}</td>
-                                 <td>${listitem.getEmployeeId()}</td>
-                                 <td>${listitem.getCustomerId()}</td>
-                                 <td>${listitem.getOrderTotal()}</td>
+                                     <table class="table table-dark table-striped">
 
-                             </tr>
-                         </c:forEach>
-
-                         </tbody>
-  </table>
+                                         <thead>
+                                          <tr>
+                                            <th>Order Date</th>
+                                            <th>Employee First Name</th>
+                                            <th>Employee Last Name</th>
+                                            <th>Customer First Name</th>
+                                            <th>Customer Last Name</th>
+                                            <th>Order Total</th>
+                                          </tr>
+                                         </thead>
+                                         <tbody>
+                                         <c:forEach var="item" items="${orderList}">
+                                             <tr>
+                                                 <td>${item.getOrderDate()}</td>
+                                                 <td>${item.getEmployeeFirstName()}</td>
+                                                 <td>${item.getOrderTotal()}</td>
+                                                 <td>${item.getOrderTotal()}</td>
+                                                 <td>${item.getOrderTotal()}</td>
+                                                 <td>${item.getOrderTotal()}</td>
+                                             </tr>
+                                         </c:forEach>
+                                         </tbody>
+                                        </table>
   <p align="right">Powered By: AWS</p><br>
             <ul class="list-unstyled">
                 <li><a href="/"><button type="button" class="btn btn-dark">Back</button></a><br><br></li>

@@ -37,16 +37,22 @@ public class OrderController {
 
 
     @RequestMapping("/orderView")
-    public ModelAndView OrderView(HttpServletRequest req)
+    public ModelAndView orderView()
     {
         ModelAndView orderView = new ModelAndView("ordersView");
-        orderView.addObject("orderList1", ordersRepo.findAll());
+        //orderView.addObject("orderlist", ordersRepo.findAll());
+        orderView.addObject("orderList", orderService.getAllOrders());
         //req.setAttribute("employees", orderService.getAllEmployees());
-        orderView.addObject("employeeList1", orderService.getAllEmployees());
-        orderView.addObject("customerList", orderService.getAllCustomers());
-        orderView.addObject("bookList", orderService.getAllBooks());
+        //orderView.addObject("employeeList2", employeeRepo.findAll());
+        //orderView.addObject("customerList", orderService.getAllCustomers());
+        //orderView.addObject("bookList", orderService.getAllBooks());
         //orderView.addObject("orderBookList1", orderService.getAllQty());
         return orderView;
+    }
+    @RequestMapping("/orderView1")
+    public String init(HttpServletRequest req){
+        req.setAttribute("employees", orderService.getAllEmployees());
+        return "ordersView";
     }
 
     @RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
