@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -28,6 +30,9 @@ public class Books {
 /*    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_bookid", referencedColumnName = "bookid")
     private List<order_book> orderBooks;*/
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
+    private Set<order_book> order_books = new HashSet<>();
 
     public Books()
     {

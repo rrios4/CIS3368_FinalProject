@@ -6,13 +6,20 @@ import javax.persistence.*;
 @Table(name ="order_book")
 public class order_book {
     @Id
-    @Column(name = "order_table_orderid")
+    @Column(name = "order_table_orderid", insertable = false, updatable = false)
     private String order_book_orderid;
-    @Column(name = "book_bookid")
+    @Column(name = "book_bookid", insertable = false, updatable = false)
     private String order_book_bookid;
     @Column(name = "bookqty")
     private String bookqty;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_book_orderid")
+    private Orders order_book;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_bookid")
+    private Books book;
 
     public order_book(){
 

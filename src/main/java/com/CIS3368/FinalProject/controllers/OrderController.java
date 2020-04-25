@@ -41,8 +41,11 @@ public class OrderController {
     {
         ModelAndView orderView = new ModelAndView("ordersView");
         orderView.addObject("orderList1", ordersRepo.findAll());
-        req.setAttribute("employees", orderService.getAllEmployees());
-        
+        //req.setAttribute("employees", orderService.getAllEmployees());
+        orderView.addObject("employeeList1", orderService.getAllEmployees());
+        orderView.addObject("customerList", orderService.getAllCustomers());
+        orderView.addObject("bookList", orderService.getAllBooks());
+        //orderView.addObject("orderBookList1", orderService.getAllQty());
         return orderView;
     }
 

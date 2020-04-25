@@ -14,7 +14,7 @@ public class Orders {
     @Id
     @Column(name="orderid")
     private String orderId;
-    @Column(name="order_customerid")
+    @Column(name="order_customerid", insertable = false, updatable = false)
     private String customerId;
     @Column(name="order_employeeid", insertable = false, updatable = false)
     private String employeeId;
@@ -27,6 +27,13 @@ public class Orders {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_employeeid")
     private Employee emp;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_customerid")
+    private Customer cust;
+
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order_book")
+    private Set<order_book> Order_Book = new HashSet<>();
 
 /*    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_bookid2", referencedColumnName = "bookid")

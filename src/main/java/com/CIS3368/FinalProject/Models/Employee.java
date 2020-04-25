@@ -11,7 +11,7 @@ import java.util.UUID;
 public class Employee {
 
     @Id
-    @Column(name="employeeid", insertable = false, updatable = false)
+    @Column(name="employeeid")
     private String employeeId;
     @Column(name="employeefirstname")
     private String employeeFirstName;

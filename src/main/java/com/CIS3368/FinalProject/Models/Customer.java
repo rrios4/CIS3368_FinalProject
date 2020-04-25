@@ -1,7 +1,9 @@
 package com.CIS3368.FinalProject.Models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -33,6 +35,9 @@ public class Customer {
 
     /*@ManyToOne(fetch = FetchType.LAZY)
     private Orders order_table;*/
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cust")
+    private Set<Orders> order = new HashSet<>();
 
     public Customer()
     {
