@@ -31,6 +31,9 @@ public class Customer {
     @JoinColumn(name = "fk_customerid",referencedColumnName = "customerid")
     private List<Orders> orders;*/
 
+   /* @ManyToOne(fetch = FetchType.LAZY)
+    private Orders cInfo;*/
+
     public Customer()
     {
 

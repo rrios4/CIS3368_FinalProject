@@ -192,7 +192,7 @@ body {
                     <input type="text"  placeholder="Zipcode" name="zipcode" value="${selectedItem.getZipcode()}">
 
                     <input type="text"  placeholder="Email" name="email" value="${selectedItem.getEmail()}">
-                    <input type="text" placeholder="Phone Number" name="phonenumber" value="${selectedItem.getPhoneNumber()}">
+
                     <input type="submit" value="Submit">
                     <br><br>
                 </form>
@@ -208,8 +208,6 @@ body {
                     <th>State</th>
                     <th>Zipcode</th>
                     <th>Email</th>
-                    <th></th>
-                     <th>Phone Number</th>
                     <th>Modify</th>
                 </tr>
                 </thead>
@@ -224,15 +222,13 @@ body {
                         <td>${listitem.getCity()}</td>
                         <td>${listitem.getState()}</td>
                         <td>${listitem.getZipcode()}</td>
-                        <td>${listitem.getEmail()}</td>
-                        <td></td>
-                        <td>${listitem.getPhoneNumber()}</td>
+                        <td>${listitem.getEmail()}</td
                         <td><a href="/deleteCustomer/${listitem.getCustomerId()}"><button type="button">Delete</button></a></td>
+
                     </tr>
                 </c:forEach>
                 </tbody>
-
-              </table>
+                </table>
 
                 <p align="right">Powered By: AWS</p><br>
 

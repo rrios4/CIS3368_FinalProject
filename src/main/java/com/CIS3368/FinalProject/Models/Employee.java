@@ -34,10 +34,8 @@ public class Employee {
 
 
 
-
-/*    @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_employeeid", referencedColumnName = "employeeid")
-    private List<Orders> orders;*/
+    /*@ManyToOne(fetch = FetchType.LAZY)
+    private Orders eInfo;*/
 
     public Employee()
     {

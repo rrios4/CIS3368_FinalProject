@@ -186,9 +186,9 @@ body {
                                                     <input type="hidden" name="customerid" value="">
                                                         <div class="input-group mb-3">
                                                             <div class="input-group-prepend">
-                                                              <span class="input-group-text">Today's Date'</span>
+                                                              <span class="input-group-text">Order Date </span>
                                                             </div>
-                                                            <input id="date" type="text" class="form-control" placeholder="Date" value="${selectedItem.getOrderDate()}">
+                                                            <input type="text" class="form-control" placeholder="Date" value="${selectedItem.getOrderDate()}">
                                                           </div>
 
                                                         <div class="input-group mb-3">
