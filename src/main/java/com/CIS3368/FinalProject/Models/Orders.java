@@ -2,7 +2,9 @@ package com.CIS3368.FinalProject.Models;
 
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -12,14 +14,19 @@ public class Orders {
     @Id
     @Column(name="orderid")
     private String orderId;
-    @Column(name="customerid")
+    @Column(name="order_customerid")
     private String customerId;
-    @Column(name="employeeid")
+    @Column(name="order_employeeid", insertable = false, updatable = false)
     private String employeeId;
     @Column(name = "orderdate")
     private String orderdate;
     @Column(name = "ordertotal")
     private String orderTotal;
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_employeeid")
+    private Employee emp;
 
 /*    @OneToMany(targetEntity = order_book.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_bookid2", referencedColumnName = "bookid")
@@ -75,7 +82,7 @@ public class Orders {
         return orderdate;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(String orderdate) {
         this.orderdate = orderdate;
     }
 }

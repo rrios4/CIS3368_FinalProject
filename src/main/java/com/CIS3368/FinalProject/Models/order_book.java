@@ -5,13 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name ="order_book")
 public class order_book {
-
     @Id
-    @Column(name = "order_bookid")
-    private String order_bookId;
-    @Column(name = "orderid")
+    @Column(name = "order_table_orderid")
     private String order_book_orderid;
-    @Column(name = "bookid")
+    @Column(name = "book_bookid")
     private String order_book_bookid;
     @Column(name = "bookqty")
     private String bookqty;

@@ -1,6 +1,7 @@
 package com.CIS3368.FinalProject.Controllers;
 
 import com.CIS3368.FinalProject.Models.*;
+import com.CIS3368.FinalProject.Services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.persistence.EntityManager;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -29,17 +32,23 @@ public class OrderController {
     @Autowired
     private BooksRepo booksRepo;
 
+    @Autowired
+    private OrderService orderService;
+
+
     @RequestMapping("/orderView")
-    public ModelAndView OrderView()
+    public ModelAndView OrderView(HttpServletRequest req)
     {
         ModelAndView orderView = new ModelAndView("ordersView");
         orderView.addObject("orderList1", ordersRepo.findAll());
+        req.setAttribute("employees", orderService.getAllEmployees());
+        
         return orderView;
     }
 
     @RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("orderid") String orderId, @RequestParam("orderdate") String orderdate, @RequestParam("ordertotal") String ordertotal, @RequestParam("employeeid") String employeeId,
-                             @RequestParam("employeefirstname") String employeeFirstName, @RequestParam("employeelastname") String employeeLastName, @RequestParam("customerid") String customerId,
+    public ModelAndView save(@RequestParam("orderid") String orderId, @RequestParam("orderdate") String orderdate, @RequestParam("ordertotal") String ordertotal, @RequestParam("employee_employeeid") String employeeId,
+                             @RequestParam("employeefirstname") String employeeFirstName, @RequestParam("employeelastname") String employeeLastName, @RequestParam("customer_customerid") String customerId,
                              @RequestParam("firstname") String firstName,@RequestParam("lastname") String lastName,@RequestParam("bookid") String bookId,@RequestParam("bookname") String bookName,
                              @RequestParam("bookprice") String bookPrice,@RequestParam("order_bookid") String order_bookid,@RequestParam("bookqty") String bookqty) {
         ModelAndView ordersView = new ModelAndView("redirect:/orderView");

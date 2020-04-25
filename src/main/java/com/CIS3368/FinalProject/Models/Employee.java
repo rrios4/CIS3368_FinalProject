@@ -1,7 +1,9 @@
 package com.CIS3368.FinalProject.Models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -9,7 +11,7 @@ import java.util.UUID;
 public class Employee {
 
     @Id
-    @Column(name="employeeid")
+    @Column(name="employeeid", insertable = false, updatable = false)
     private String employeeId;
     @Column(name="employeefirstname")
     private String employeeFirstName;
@@ -32,10 +34,10 @@ public class Employee {
     @Column(name="employeephonenumber")
     private String employeePhoneNumber;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "emp")
+    private Set<Orders> order = new HashSet<>();
 
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    private Orders eInfo;*/
 
     public Employee()
     {
