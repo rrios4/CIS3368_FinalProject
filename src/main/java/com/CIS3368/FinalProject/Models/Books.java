@@ -41,8 +41,6 @@ public class Books {
         this.authorName = authorName;
         this.publisher = publisher;
         this.bookPrice = bookPrice;
-
-
     }
 
     public String getId() {
