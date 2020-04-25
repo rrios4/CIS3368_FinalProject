@@ -24,6 +24,8 @@ public class Customer {
     private String zipcode;
     @Column(name="email")
     private String email;
+    @Column(name="phonenumber")
+    private String phoneNumber;
 
 /*    @OneToMany(targetEntity = Orders.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_customerid",referencedColumnName = "customerid")
@@ -35,7 +37,7 @@ public class Customer {
     }
 
     public Customer(String customerId, String firstName, String lastName, String address, String city, String state,
-                    String zipcode, String email) {
+                    String zipcode, String email, String phoneNumber) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -44,6 +46,7 @@ public class Customer {
         this.state = state;
         this.zipcode = zipcode;
         this.email = email;
+        this.phoneNumber = phoneNumber;
 
     }
 
@@ -110,4 +113,8 @@ public class Customer {
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
+
+    public String getPhoneNumber() { return phoneNumber; }
+
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 }

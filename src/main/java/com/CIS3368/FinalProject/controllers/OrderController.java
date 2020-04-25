@@ -38,7 +38,7 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
-    public ModelAndView save(@RequestParam("orderid") String orderId,@RequestParam("orderdate") String orderDate, @RequestParam("ordertotal") String ordertotal, @RequestParam("employeeid") String employeeId,
+    public ModelAndView save(@RequestParam("orderid") String orderId, @RequestParam("orderdate") String orderdate, @RequestParam("ordertotal") String ordertotal, @RequestParam("employeeid") String employeeId,
                              @RequestParam("employeefirstname") String employeeFirstName, @RequestParam("employeelastname") String employeeLastName, @RequestParam("customerid") String customerId,
                              @RequestParam("firstname") String firstName,@RequestParam("lastname") String lastName,@RequestParam("bookid") String bookId,@RequestParam("bookname") String bookName,
                              @RequestParam("bookprice") String bookPrice,@RequestParam("order_bookid") String order_bookid,@RequestParam("bookqty") String bookqty) {
@@ -97,7 +97,8 @@ public class OrderController {
                 bookToSave.setId(UUID.randomUUID().toString());
             }
 
-            orderToSave.setOrderDate(orderDate);
+
+            orderToSave.setOrderDate(orderdate);
             orderToSave.setOrderTotal(ordertotal);
             //bookToSave.setBookName(bookName);
             employeeToSave.setEmployeeFirstName(employeeFirstName);

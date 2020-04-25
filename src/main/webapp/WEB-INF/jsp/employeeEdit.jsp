@@ -197,6 +197,8 @@ body {
 
                         <input type="text" placeholder="Email" name="email" value="${selectedItem.getEmail()}">
 
+                        <input type="text" placeholder="Phone Number" name="employeephonenumber" value="${selectedItem.getEmployeePhoneNumber()}">
+
                         <input type="submit" value="Submit">
                         <br><br>
                     </form>
@@ -215,6 +217,7 @@ body {
                             <th>State</th>
                             <th>Zipcode</th>
                             <th>Email</th>
+                            <th>Phone Number</th>
                             <th>Modify</th>
                           </tr>
                          </thead>
@@ -232,6 +235,7 @@ body {
                                  <td>${listitem.getState()}</td>
                                  <td>${listitem.getZipcode()}</td>
                                  <td>${listitem.getEmail()}</td>
+                                 <td>${listitem.getEmployeePhoneNumber()}</td>
                                  <td><a href="/deleteEmployee/${listitem.getEmployeeId()}"><button type="button">Delete</button></a></td>
                              </tr>
                          </c:forEach>

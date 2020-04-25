@@ -32,7 +32,7 @@ public class EmployeeController {
                              @RequestParam("employeelastname") String employeeLastName, @RequestParam("position") String position,
                              @RequestParam("payrate") String payRate, @RequestParam("address") String address,
                              @RequestParam("city") String city, @RequestParam("state") String state, @RequestParam("zipcode") String zipcode,
-                             @RequestParam("email") String email)
+                             @RequestParam("email") String email, @RequestParam("employeephonenumber") String employeePhoneNumber)
     {
         ModelAndView employeeEdit = new ModelAndView("redirect:/EmployeeView");
         Employee employeeToSave;
@@ -55,6 +55,7 @@ public class EmployeeController {
         employeeToSave.setState(state);
         employeeToSave.setZipcode(zipcode);
         employeeToSave.setEmail(email);
+        employeeToSave.setEmployeePhoneNumber(employeePhoneNumber);
         employeeRepo.save(employeeToSave);
         employeeEdit.addObject("employeelist", employeeRepo.findAll());
         return employeeEdit;

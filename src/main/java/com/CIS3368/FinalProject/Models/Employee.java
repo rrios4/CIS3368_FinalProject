@@ -29,6 +29,9 @@ public class Employee {
     private String zipcode;
     @Column(name="email")
     private String email;
+    @Column(name="employeephonenumber")
+    private String employeePhoneNumber;
+
 
 
 
@@ -42,7 +45,7 @@ public class Employee {
     }
 
     public Employee(String employeeId, String employeeFirstName, String employeeLastName, String position, String payRate, String address,
-                    String city, String state, String zipcode, String email)
+                    String city, String state, String zipcode, String email, String employeePhoneNumber)
     {
         this.employeeId = employeeId;
         this.employeeFirstName = employeeFirstName;
@@ -54,6 +57,7 @@ public class Employee {
         this.state = state;
         this.zipcode = zipcode;
         this.email = email;
+        this.employeePhoneNumber = employeePhoneNumber;
     }
 
     public String getEmployeeId() {
@@ -135,4 +139,8 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getEmployeePhoneNumber() { return employeePhoneNumber; }
+
+    public void setEmployeePhoneNumber(String employeePhoneNumber) { this.employeePhoneNumber = employeePhoneNumber; }
 }
