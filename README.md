@@ -1,5 +1,5 @@
 # Book Store Webapp
-Final Project for the class of CIS 3368 of Spring 2020 that assigned us to build a web application that included the use of a transactional table in the database and use it on the actual application. This project made me learn about bootstrap 4, more about javascript, mysql, and dealing with API's using Java.
+Final Project for the class of CIS 3368 of Spring 2020 that assigned us to build a web application that included the use of a transactional table in the database and use it on the actual application. This project made me learn about bootstrap 4, more about javascript, mysql, and dealing with API's using Java. This was all hosted in the AWS services using their instances in the console.
 
 
 ![Image of Homepage](https://github.com/rrios4/CIS3368_FinalProject/blob/master/src/main/webapp/images/1.png?raw=true)
